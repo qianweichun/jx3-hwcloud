@@ -24,7 +24,7 @@ spec:
         env:
         - name: XDG_CONFIG_HOME
           value: /workspace/xdg_config
-        image: gcr.io/jenkinsxio/jx-boot:3.1.38
+        image: gcr.r.jfh.com/jenkinsxio/jx-boot:3.1.38
         name: git-clone
         volumeMounts:
         - mountPath: /workspace
@@ -47,8 +47,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
-        image: gcr.io/jenkinsxio/jx-boot:3.1.38
-        imagePullPolicy: Always
+        image: gcr.r.jfh.com/jenkinsxio/jx-boot:3.1.38
+        imagePullPolicy: IfNotPresent
         name: job
         volumeMounts:
         - mountPath: /workspace
@@ -57,7 +57,7 @@ spec:
       - command:
         - versionStream/src/wait-for-complete.sh
         image: google/cloud-sdk:slim
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: gsm
         volumeMounts:
         - mountPath: /workspace

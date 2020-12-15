@@ -24,7 +24,7 @@ spec:
         env:
         - name: XDG_CONFIG_HOME
           value: /workspace/xdg_config
-        image: gcr.io/jenkinsxio/jx-boot:3.1.38
+        image: gcr.r.jfh.com/jenkinsxio/jx-boot:3.1.38
         name: git-clone
         volumeMounts:
         - mountPath: /workspace
@@ -40,8 +40,8 @@ spec:
           value: /workspace/xdg_config
         - name: AZURE_AD_RESOURCE
           value: https://vault.azure.net
-        image: gcr.io/jenkinsxio/jx-boot:3.1.38
-        imagePullPolicy: Always
+        image: gcr.r.jfh.com/jenkinsxio/jx-boot:3.1.38
+        imagePullPolicy: IfNotPresent
         name: job
         volumeMounts:
         - mountPath: /workspace
